@@ -17,6 +17,7 @@ import utils.DBUtil;
  * Servlet implementation class CreateServlet
  */
 @WebServlet("/create")
+//挿入処理
 public class CreateServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

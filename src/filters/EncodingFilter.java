@@ -14,6 +14,7 @@ import javax.servlet.annotation.WebFilter;
  * Servlet Filter implementation class EncodingFilter
  */
 @WebFilter("/*")
+//文字化け防止の「おまじない」
 public class EncodingFilter implements Filter {
 
     /**

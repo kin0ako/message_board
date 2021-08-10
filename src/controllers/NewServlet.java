@@ -15,6 +15,7 @@ import models.Message;
  * Servlet implementation class NewServlet
  */
 @WebServlet("/new")
+//新規登録処理
 public class NewServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

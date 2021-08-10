@@ -21,6 +21,7 @@ import javax.persistence.Table;
     )
 })
 @Table(name = "messages")
+//必要なデータを格納するクラス
 public class Message {
     @Id
     @Column(name = "id")
@@ -35,9 +36,11 @@ public class Message {
     @Column(name = "content", length = 255, nullable = false)
     private String content;
 
+    //作成日時
     @Column(name = "created_at", nullable = false)
     private Timestamp created_at;
 
+    //更新日時
     @Column(name = "updated_at", nullable = false)
     private Timestamp updated_at;
 
