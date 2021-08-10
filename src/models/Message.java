@@ -7,9 +7,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
+//複数のNamedQueryをまとめたもので、NamedQueryをカンマで区切り指定
+@NamedQueries({
+    //主キー以外の項目などで検索し、複数件の結果を取得したい場合に定義する
+    @NamedQuery(
+        name = "getAllMessages",
+        query = "SELECT m FROM Message AS m ORDER BY m.id DESC"
+    )
+})
 @Table(name = "messages")
 public class Message {
     @Id
