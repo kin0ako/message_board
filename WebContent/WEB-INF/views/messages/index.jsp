@@ -5,6 +5,12 @@
 <c:import url="../layout/app.jsp">
     <%-- <c:param name="content"> と書いたタグの中の記述内容が、app.jsp の ${param.content} のところに当てはまる --%>
     <c:param name="content">
+        <%-- フラッシュメッセージ（「登録が完了しました」のような文言を表示） --%>
+        <c:if test="${flush != null}">
+            <div id="flush_success">
+                <c:out value="${flush}"></c:out>
+            </div>
+        </c:if>
         <h2>メッセージ一覧</h2>
         <ul>
             <c:forEach var="message" items="${messages}">
