@@ -16,9 +16,14 @@ import javax.persistence.Table;
 @NamedQueries({
     //主キー以外の項目などで検索し、複数件の結果を取得したい場合に定義する
     @NamedQuery(
-        name = "getAllMessages",
-        query = "SELECT m FROM Message AS m ORDER BY m.id DESC"
-    )
+            name = "getAllMessages",
+            query = "SELECT m FROM Message AS m ORDER BY m.id DESC"
+            ),
+    //ページネーション使用のために「データベースにメッセージのデータが何件入っているか」を知るためのJPQL
+    @NamedQuery(
+            name = "getMessagesCount",
+            query = "SELECT COUNT(m) FROM Message AS m"
+            )
 })
 @Table(name = "messages")
 //必要なデータを格納するクラス
